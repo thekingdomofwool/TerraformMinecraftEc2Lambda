@@ -64,8 +64,5 @@ resource "aws_security_group" "minecraft_server-sg" {
     Name = "allow_tls"
   }
 }
-output "instance_ip" {
-  description = "The public ip for ssh access"
-  value       = aws_instance.instance.public_ip
-}
+
 
