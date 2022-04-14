@@ -15,6 +15,7 @@ provider "aws" {
 resource "aws_instance" "minecraft_server" {
   ami           = "ami-06542a822d33e2e40"
   instance_type = "t2.micro"
+  associate_public_ip_address = true 
   vpc_security_group_ids = [aws_security_group.minecraft_server-sg.id]
   user_data = <<EOF
         #! /bin/bash
