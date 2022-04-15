@@ -3,14 +3,11 @@
 # TerraformEc2Minecraft
 You will need to change the user_data script if you use a different AMI -- the one I used is specific to Amazon Linux and Corretto. 
 
-To allow ssh access via public/private keypair add the following resource block: 
+To allow ssh access via public/private keypair add the following resource block to main.tf: 
 
-resource "aws_key_pair" "ssh-key" {
-  key_name   = "ssh-key"
-  public_key = "ssh-rsa AAAAB3Nza............"
-}
+keypair.tf
 
-Then, add: key_name = "ssh-key" to the instance block.
+Then, add: key_name = "ssh-key" to the instance block in main.tf.
 
 
 # Minecraft Specifics 
