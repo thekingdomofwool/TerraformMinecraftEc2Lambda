@@ -9,6 +9,12 @@ To allow ssh access via public/private keypair add the following resource block 
 
 Then, add: key_name = "ssh-key" to the instance block in main.tf.
 
+I, however, prefer to simply skip this part and rely on access via Instance Connect in the AWS console (see below)
+
+# SSH from the AWS console (instance connect)
+Search the following for the EC2_INSTANCE_CONNECT service, find the block that corresponds to whatever region your instance resides, and permit that IP address range via your security group on port 22.
+https://ip-ranges.amazonaws.com/ip-ranges.json
+
 
 # Minecraft Specifics 
 
@@ -21,6 +27,3 @@ Then enable the service:
 chmod 664 /etc/systemd/system/minecraft.service
 systemctl daemon-reload
 
-# SSH from the AWS console (instance connect)
-Search the following for the EC2_INSTANCE_CONNECT service, find the block that corresponds to whatever region your instance resides, and permit that IP address range via your security group on port 22.
-https://ip-ranges.amazonaws.com/ip-ranges.json
