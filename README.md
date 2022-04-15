@@ -15,14 +15,13 @@ I, however, prefer to simply skip this part and rely on access via Instance Conn
 Search the following for the EC2_INSTANCE_CONNECT service, find the block that corresponds to whatever region your instance resides, and permit that IP address range via your security group on port 22.
 https://ip-ranges.amazonaws.com/ip-ranges.json
 
-The variables block should propt you to enter the IP range upon "terraform plan"
 
 # Minecraft Specifics 
 
 SSH into the intance (see outputs to get the public IP) and add the following script to /etc/systemd/system/minecraft.service (or whatever you want to call this file): 
 
 ExecStart=/usr/bin/java -Xmx1024M -Xms1024M -jar server.jar nogui
-ExecStop=/opt/minecraft/tools/mcrcon/mcrcon -H 127.0.0.1 -P 25575 -p strong-password stop
+
 
 Then enable the service: 
 chmod 664 /etc/systemd/system/minecraft.service
