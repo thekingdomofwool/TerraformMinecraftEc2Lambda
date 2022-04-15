@@ -11,7 +11,7 @@ terraform {
 
 provider "aws" {
   profile = "default"
-  region  = "us-east-1"
+  region  = "us-west-1"
 }
 
 resource "aws_instance" "minecraft_server" {
@@ -52,7 +52,7 @@ resource "aws_security_group" "minecraft_server-sg" {
     from_port        = 22
     to_port          = 22
     protocol         = "tcp"
-    cidr_blocks      = ["0.0.0.0/0"]
+    cidr_blocks      = ["73.14.54.118/32"]
   
   }
  
@@ -72,3 +72,4 @@ output "instance_ip" {
   description = "The public ip for ssh access"
   value       = aws_instance.minecraft_server.public_ip
 }
+
