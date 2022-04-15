@@ -22,5 +22,5 @@ chmod 664 /etc/systemd/system/minecraft.service
 systemctl daemon-reload
 
 # SSH from the AWS console (instance connect)
-Search the following for the EC2_INSTANCE_CONNECT service, find the block that corresponds to whatever region your instance resides, and permit that IP address range via your security group.
+Search the following for the EC2_INSTANCE_CONNECT service, find the block that corresponds to whatever region your instance resides, and permit that IP address range via your security group on port 22.
 https://ip-ranges.amazonaws.com/ip-ranges.json
