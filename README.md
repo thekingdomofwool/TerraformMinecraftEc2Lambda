@@ -5,11 +5,7 @@ You will need to change the user_data script if you use a different AMI -- the o
 
 To allow ssh access via public/private keypair add the following resource block to main.tf: 
 
-resource "aws_key_pair" "ssh-key" {
-  key_name   = "ssh-key"
-  public_key = "ssh-rsa AAAAB3Nza............"
-}
-
+![image](https://user-images.githubusercontent.com/103598369/163509427-f03e4041-610f-481c-a894-9a826f93e807.png)
 
 Then, add: key_name = "ssh-key" to the instance block in main.tf.
 
