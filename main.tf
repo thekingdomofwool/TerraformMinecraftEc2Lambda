@@ -29,8 +29,9 @@ resource "aws_instance" "minecraft_server" {
         mkdir /opt/minecraft/
         mkdir /opt/minecraft/server/
         cd /opt/minecraft/server
-        wget https://launcher.mojang.com/v1/objects/a16d67e5807f57fc4e550299cf20226194497dc2/server.jar
+        wget https://launcher.mojang.com/v1/objects/c8f83c5655308435b3dcf03c06d9fe8740a77469/server.jar
         sudo chown -R minecraft:minecraft /opt/minecraft/
+        sudo java -Xmx1024M -Xms1024M -jar minecraft_server.1.18.2.jar nogui
        
 EOF
 }
@@ -72,4 +73,3 @@ output "instance_ip" {
   description = "The public ip for ssh access"
   value       = aws_instance.minecraft_server.public_ip
 }
-
