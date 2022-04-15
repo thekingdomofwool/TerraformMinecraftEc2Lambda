@@ -28,3 +28,6 @@ Then enable the service:
 chmod 664 /etc/systemd/system/minecraft.service
 systemctl daemon-reload
 
+# Lambda 
+
+Adjust the cron expression to set the on-time for the server. 
