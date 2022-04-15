@@ -15,6 +15,7 @@ I, however, prefer to simply skip this part and rely on access via Instance Conn
 Search the following for the EC2_INSTANCE_CONNECT service, find the block that corresponds to whatever region your instance resides, and permit that IP address range via your security group on port 22.
 https://ip-ranges.amazonaws.com/ip-ranges.json
 
+The variables block should propt you to enter the IP range upon "terraform plan"
 
 # Minecraft Specifics 
 
