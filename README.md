@@ -34,4 +34,4 @@ Adjust the cron expression to set the on-time for the server.
 # Something I Learned (among other things)
 You need to have the uncompressed version of a file in the directory you're working in if you intend to pass a .zip version to Lambda. 
 
-# How to adjust the time 
+
